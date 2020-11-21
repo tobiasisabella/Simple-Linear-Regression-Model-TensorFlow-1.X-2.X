@@ -1,7 +1,8 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-Adaptation of tensorflow 2.0 to 1.X, targeting those who prefer the placeholder
+
+#Adaptation of tensorflow 2.0 to 1.X, targeting those who prefer the placeholder
 
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
@@ -12,7 +13,6 @@ display_step = 200
 Considering X as the size of a house and Y as its price
 
 df = pd.read_csv("LR.csv")
-print(len(df["X-TRAIN"]))
 train_X = df["X-TRAIN"]
 train_y = df["Y-TRAIN"]
 n_samples = train_X.shape[0]
