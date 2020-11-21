@@ -11,16 +11,15 @@ training_epochs = 2000
 display_step = 200
 Considering X as the size of a house and Y as its price
 
-# Training
-train_X = np.asarray([3.3,4.4,5.5,6.71,6.93,4.168,9.779,6.182,7.59,2.167,7.042,10.791,5.313,7.997,5.654,9.27,3.1])
-train_y = np.asarray([1.7,2.76,2.09,3.19,1.694,1.573,3.366,2.596,2.53,1.221,2.827,3.465,1.65,2.904,2.42,2.94,1.3])
+df = pd.read_csv("LR.csv")
+print(len(df["X-TRAIN"]))
+train_X = df["X-TRAIN"]
+train_y = df["Y-TRAIN"]
 n_samples = train_X.shape[0]
  
-# Test
-test_X = np.asarray([6.83, 4.668, 8.9, 7.91, 5.7, 8.7, 3.1, 2.1])
-test_y = np.asarray([1.84, 2.273, 3.2, 2.831, 2.92, 3.24, 1.35, 1.03])
-X = tf.placeholder(tf.float32)
-y = tf.placeholder(tf.float32)
+
+test_X = df["X-TEST"]
+test_y = df["Y-TEST"]
  
 
 W = tf.Variable(np.random.randn(), name="weight")
